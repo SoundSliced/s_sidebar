@@ -908,5 +908,4 @@ final _sideBarController = RM.inject<SideBarController>(
   autoDisposeWhenNotUsed: false,
 );
 
-
 //***************************************** */
