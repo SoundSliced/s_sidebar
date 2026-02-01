@@ -83,8 +83,13 @@ import 'package:states_rebuilder_extended/states_rebuilder_extended.dart';
 /// )
 /// ```
 class SSideBar extends StatefulWidget {
+  /// Called when a sidebar item is tapped, providing its index.
   final ValueChanged<int>? onTapForAllTabButtons;
+
+  /// Animation durations for the sidebar resize and floating effects.
   final Duration sideBarAnimationDuration, floatingAnimationDuration;
+
+  /// Colors used to style the sidebar and its interactive states.
   final Color sideBarColor,
       selectedIconBackgroundColor,
       selectedIconColor,
@@ -95,23 +100,56 @@ class SSideBar extends StatefulWidget {
       highlightColor,
       unSelectedTextColor,
       selectedTextColor;
+
+  /// Size and shape configuration for the sidebar container and items.
   final double borderRadius, sideBarWidth, sideBarSmallWidth, sideBarItemHeight;
+
+  /// Optional fixed height for the sidebar; defaults to full available height.
   final double? sideBarHeight;
+
+  /// Optional custom border for the sidebar container.
   final BoxBorder? sideBarBorder;
+
+  /// Items displayed in the sidebar menu.
   final List<SSideBarItem> sidebarItems;
+
+  /// Per-item enablement flags for tap handling.
   final List<bool> shouldTapItems;
+
+  /// Whether to show a divider before the last items and start minimized.
   final bool settingsDivider, isMinimized, ignoreDifferenceOnFlutterWeb;
+
+  /// Whether to use compact spacing and smaller item heights.
   final bool compactMode;
+
+  /// Whether to show tooltips while the sidebar is minimized.
   final bool showTooltipsWhenMinimized;
+
+  /// Curve used for width/position animations.
   final Curve curve;
+
+  /// Text style for sidebar item labels.
   final TextStyle textStyle;
+
+  /// Optional logo widget displayed at the top of the sidebar.
   final Widget? logo;
+
+  /// Optional initial selection index.
   final int? preSelectedItemIndex;
+
+  /// Callback invoked when the minimize button is tapped.
   final Function(bool isMinimized)? minimizeButtonOnTap;
+
+  /// Horizontal padding inside each sidebar item.
   final double itemHorizontalPadding;
+
+  /// Spacing between the icon and the label text.
   final double itemIconTextSpacing;
+
+  /// Corner radius for item highlight/selection background.
   final double itemBorderRadius;
 
+  /// Creates a configurable sidebar widget.
   const SSideBar({
     super.key,
     this.sideBarColor = const Color(0xff1D1D1D),
@@ -727,6 +765,7 @@ class SSideBarItem {
 
   final Function(Offset? offset)? onTap;
 
+  /// Creates a sidebar item with optional tooltip, badge, and tap callback.
   SSideBarItem({
     required this.iconSelected,
     required this.title,

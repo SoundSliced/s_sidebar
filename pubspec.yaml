@@ -2,7 +2,7 @@ name: s_sidebar
 description: A beautiful, customizable, and responsive sidebar widget for Flutter with smooth animations, badge support, and adaptive layouts.
 issue_tracker: https://github.com/SoundSliced/s_sidebar/issues
 repository: https://github.com/SoundSliced/s_sidebar
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/SoundSliced/s_sidebar
 
 environment:
