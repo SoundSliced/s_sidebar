@@ -276,8 +276,9 @@ void main() {
 
       await tester.pumpAndSettle();
 
-      // Find and tap the minimize button (arrow icon)
-      final minimizeButton = find.byIcon(Icons.arrow_left);
+      // Find and tap the minimize button by key (works for both icon variants)
+      final minimizeButton =
+          find.byKey(ValueKey("SSideBar MinimizeButton + false"));
       expect(minimizeButton, findsOneWidget);
 
       await tester.tap(minimizeButton);
