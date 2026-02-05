@@ -101,6 +101,9 @@ class SSideBar extends StatefulWidget {
       unSelectedTextColor,
       selectedTextColor;
 
+  /// Optional color for the minimize button; defaults to a semi-transparent blue if not provided.
+  final Color? minimizeButtonColor;
+
   /// Size and shape configuration for the sidebar container and items.
   final double borderRadius, sideBarWidth, sideBarSmallWidth, sideBarItemHeight;
 
@@ -137,6 +140,9 @@ class SSideBar extends StatefulWidget {
   /// Optional initial selection index.
   final int? preSelectedItemIndex;
 
+  /// Optional size for the minimize button icon; defaults to 60.
+  final double? minimizeButtonIconSize;
+
   /// Callback invoked when the minimize button is tapped.
   final Function(bool isMinimized)? minimizeButtonOnTap;
 
@@ -161,6 +167,7 @@ class SSideBar extends StatefulWidget {
     this.hoverColor = Colors.black38,
     this.splashColor = Colors.black87,
     this.highlightColor = Colors.black,
+    this.minimizeButtonColor,
     this.borderRadius = 20,
     this.sideBarWidth = 240,
     this.sideBarHeight,
@@ -179,6 +186,7 @@ class SSideBar extends StatefulWidget {
     this.itemHorizontalPadding = 10,
     this.itemIconTextSpacing = 12,
     this.itemBorderRadius = 10,
+    this.minimizeButtonIconSize,
     this.sideBarBorder,
     required this.sidebarItems,
     required this.onTapForAllTabButtons,
@@ -455,8 +463,9 @@ class _SSideBarState extends State<SSideBar> {
                             minimize
                                 ? Icons.arrow_right_rounded
                                 : Icons.arrow_left_rounded,
-                            color: Colors.blue.shade800.withValues(alpha: 0.8),
-                            size: 60,
+                            color: widget.minimizeButtonColor ??
+                                Colors.blue.shade800.withValues(alpha: 0.8),
+                            size: widget.minimizeButtonIconSize ?? 60,
                           ),
                         ),
                       ),
@@ -483,9 +492,12 @@ class _SSideBarState extends State<SSideBar> {
                         curve: Curves.easeOutExpo,
                         child: Icon(
                           key: ValueKey("SSideBar MinimizeButton + $minimize"),
-                          minimize ? Icons.arrow_right : Icons.arrow_left,
-                          color: Colors.blue.shade800.withValues(alpha: 0.8),
-                          size: 60,
+                          minimize
+                              ? Icons.arrow_right_rounded
+                              : Icons.arrow_left_rounded,
+                          color: widget.minimizeButtonColor ??
+                              Colors.blue.shade800.withValues(alpha: 0.8),
+                          size: widget.minimizeButtonIconSize ?? 60,
                         ),
                       ),
                     ),
