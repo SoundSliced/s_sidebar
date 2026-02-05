@@ -452,10 +452,11 @@ class _SSideBarState extends State<SSideBar> {
                           child: Icon(
                             key:
                                 ValueKey("SSideBar MinimizeButton + $minimize"),
-                            minimize ? Icons.arrow_right : Icons.arrow_left,
-                            color:
-                                Colors.yellow.shade400.withValues(alpha: 0.8),
-                            size: 40,
+                            minimize
+                                ? Icons.arrow_right_rounded
+                                : Icons.arrow_left_rounded,
+                            color: Colors.blue.shade800.withValues(alpha: 0.8),
+                            size: 60,
                           ),
                         ),
                       ),
@@ -483,8 +484,8 @@ class _SSideBarState extends State<SSideBar> {
                         child: Icon(
                           key: ValueKey("SSideBar MinimizeButton + $minimize"),
                           minimize ? Icons.arrow_right : Icons.arrow_left,
-                          color: Colors.yellow.shade400.withValues(alpha: 0.8),
-                          size: 40,
+                          color: Colors.blue.shade800.withValues(alpha: 0.8),
+                          size: 60,
                         ),
                       ),
                     ),
