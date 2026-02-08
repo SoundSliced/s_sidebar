@@ -24,7 +24,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  s_sidebar: ^1.0.3
+  s_sidebar: ^2.0.0
 ```
 
 Then run:

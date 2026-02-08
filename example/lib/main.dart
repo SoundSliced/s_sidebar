@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:s_sidebar/s_sidebar.dart';
 
 void main() {

@@ -73,4 +73,4 @@
 /// ```
 library;
 
-export 'src/s_sidebar.dart';
+export 'package:s_packages/s_packages.dart';
