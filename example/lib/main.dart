@@ -121,8 +121,12 @@ class _SidebarExamplePageState extends State<SidebarExamplePage> {
     return const [true, true, false, true, true, true];
   }
 
-  void _showPopupSidebar() {
+  void _showPopupSidebar(Offset tapPosition) {
+    log("Activating popup sidebar at position: $tapPosition");
     SideBarController.activateSideBar(
+      offset: const Offset(400, 100),
+      animateFromOffset: Offset(tapPosition.dx, tapPosition.dy - 80),
+      animationDuration: const Duration(milliseconds: 600),
       sSideBar: SSideBar(
         sidebarItems: [
           SSideBarItem(
@@ -174,12 +178,17 @@ class _SidebarExamplePageState extends State<SidebarExamplePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF5F5F5),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: _showPopupSidebar,
-        backgroundColor: Colors.purpleAccent.withValues(alpha: 0.8),
-        icon: const Icon(Icons.add_box),
-        label: const Text('Show Popup Sidebar'),
-        tooltip: 'Demonstrate SideBarController.activateSideBar()',
+      floatingActionButton: SInkButton(
+        onTap: (pos) => _showPopupSidebar(pos),
+        child: IgnorePointer(
+          child: FloatingActionButton.extended(
+            onPressed: () {},
+            backgroundColor: Colors.purpleAccent.withValues(alpha: 0.8),
+            icon: const Icon(Icons.add_box),
+            label: const Text('Show Popup Sidebar'),
+            tooltip: 'Demonstrate SideBarController.activateSideBar()',
+          ),
+        ),
       ),
       body: Row(
         children: [

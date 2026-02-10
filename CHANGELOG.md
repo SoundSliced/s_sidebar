@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## 2.1.1
+- `s_packages` dependency upgraded: **`s_sidebar` sub package upgraded**:
+  - `s_sidebar`: Added default left alignment for sidebar activation, allowing the sidebar to stay anchored to the left while minimizing.
+
+
 ## 2.1.0
 - ** `s_packages` dependency upgraded: its `s_sidebar`sub-package (along side more packages) was upgraded **:
   - Added `animateFromOffset` to `activateSideBar` to allow animating the sidebar popup from a specific screen position (e.g., button tap location).
