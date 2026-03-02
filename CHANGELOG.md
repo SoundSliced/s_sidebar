@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.1.0
+- `s_packages` dependency upgraded to 3.2.0
+  - Fixed issue where `SSideBarItem.onTap` callback was incorrectly triggered during long presses.
+  - Replaced `InkWell` with `SInkButton` which uses `onTapUp` internally, ensuring the callback only fires on completed taps.
+  - This cleaner solution eliminates the need for wrapper widgets while preserving all visual effects and providing correct tap position data.
+
 ## [3.0.0]
 - `s_packages` dependency upgraded to ^3.0.0
 
